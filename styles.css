@@ -1,0 +1,83 @@
+body{
+    padding: 25px;
+    background-color: white;
+    color: black;
+}
+
+.off{
+    background-color: black;
+    color: white;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 260px;
+    height: 134px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #696969;
+    -webkit-transform: .4s;
+    transition: .4s;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 100px;
+    width: 100px;
+    left: 18px;
+    bottom: 18px;
+    background-image: url(images.png);
+    background-size: 90px 90px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+
+
+input:checked + .slider{
+    background-color: #2196f3;
+}
+    
+input:focus + .slider{
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before{
+    -webkit-transform: translateX(120px);
+    -ms-transform: translateX(120px);
+    transform: translateX(120px);
+    background-image: url(images2.png);
+    background-size: 90px 90px;
+    background-position-x: 20px;
+    background-position-y: 10px;
+}
+
+.slider.round{
+    border-radius: 60px;
+}
+
+.slider.round:before{
+    border-radius: 50%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
